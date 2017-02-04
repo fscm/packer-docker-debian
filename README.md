@@ -1,6 +1,6 @@
 # Debian Docker
 
-Packer templates to build Docker Debian boxes.
+Packer templates to build Docker Debian containers.
 
 ## Synopsis
 
