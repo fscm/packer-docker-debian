@@ -41,9 +41,11 @@ Usage:
 ```
 
 #### Script Options
+- `checksum_type` - The type of the ISO checksum specified in `checksum_value` (default value: "none"). If set to something other than "*none*" then the `checksum_value` must also be set. Possible values are "*none*", "*md5*", "*sha1*", "*sha256*", or "*sha512*".
+- `checksum_value` - The checksum for the ISO file (default value: ""). Make sure that the type of the checksum is specified with the `checksum_type` variable.
 - `docker_name` - The Docker image name (default value: "jessie").
-- `headless` - Show the console of the machine being built (default value: "true").
-- `os_codename` - Codename of Operating System (default value: "jessie").
+- `headless` - Hide the console of the machine being built (default value: "true").
+- `os_codename` - Codename of the Operating System (default value: "jessie").
 - `os_version` - Version of the Operating System (default value: "8.7.1").
 
 ## Contributing
