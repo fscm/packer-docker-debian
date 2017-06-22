@@ -48,6 +48,42 @@ Usage:
 - `os_codename` - Codename of the Operating System (default value: "stretch").
 - `os_version` - Version of the Operating System (default value: "9.0.0").
 
+### Add image to Docker
+
+Adding the resulting image to docker can be done with the following command:
+
+```
+docker import path/to/the/image.tar <user>/<image>:<tag>
+```
+
+Additional tags can be added to the image using the following command:
+
+```
+docker tag <image_id> <user>/<image>:<extra_tag>
+```
+
+#### Push image to Docker Hub
+
+After adding an image to Docker, that image can be pushed to a Docker registry... Like Docker Hub.
+
+Make sure that you are logged in to the service.
+
+```
+docker login
+```
+
+When logged in, an image can be pushed using the following command:
+
+```
+docker push <user>/<image>:<tag>
+```
+
+Extra tags can also be pushed.
+
+```
+docker push <user>/<image>:<extra_tag>
+```
+
 ## Contributing
 
 1. Fork it!
