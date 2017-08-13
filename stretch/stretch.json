@@ -93,6 +93,9 @@
     {
       "type":           "shell",
       "inline_shebang": "/bin/bash -e",
+      "environment_vars": [
+        "DEBIAN_FRONTEND=noninteractive"
+      ],
       "inline": [
         "unset HISTFILE",
         "history -cw",
@@ -100,7 +103,7 @@
         "curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add -",
         "echo 'deb https://apt.dockerproject.org/repo debian-{{user `os_codename`}} main' | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null",
         "sudo apt-get -qq update",
-        "sudo DEBIAN_FRONTEND=noninteractive apt-get -y -qq install --no-install-recommends curl vim wget dbus coreutils binutils dpkg-dev debootstrap debian-archive-keyring docker-engine",
+        "sudo apt-get -y -qq install --no-install-recommends curl vim wget dbus coreutils binutils dpkg-dev debootstrap debian-archive-keyring docker-engine",
         "echo === System Settings ===",
         "sudo update-locale LC_CTYPE={{user `system_locale`}}.UTF-8",
         "echo === Deboostrap Settings ===",
@@ -109,7 +112,6 @@
         "sudo chown root:root /usr/share/debootstrap/scripts/{{user `os_codename`}}",
         "sudo chmod 0644 /usr/share/debootstrap/scripts/{{user `os_codename`}}",
         "echo === Docker Build ===",
-        "export DEBIAN_FRONTEND=noninteractive",
         "sudo mkdir -p /build",
         "ROOTFS=$(sudo mktemp -d -p /build {{user `os_codename`}}.XXXXXX)",
         "sudo /usr/sbin/debootstrap --variant=docker --arch=amd64 --foreign {{user `os_codename`}} ${ROOTFS}",
