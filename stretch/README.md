@@ -46,7 +46,7 @@ Usage:
 - `docker_name` - The Docker image name (default value: "stretch").
 - `headless` - Hide the console of the machine being built (default value: "true").
 - `os_codename` - Codename of the Operating System (default value: "stretch").
-- `os_version` - Version of the Operating System (default value: "9.0.0").
+- `os_version` - Version of the Operating System (default value: "9.4.0").
 
 ### Add the image to Docker
 
